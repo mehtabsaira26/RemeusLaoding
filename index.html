@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet"/>
+    <meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="axcore solutions">
+
+    <title>Remeus</title>
+    <link rel="icon" href="images/fav.png" type="image/png">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+ </head>
+<body style="background-color: rgb(245,245,245);">
+<div id="loading">
+  <center>
+    <img src="images/loading.gif" class="load_img">
+  </center>
+</div> 
+		<header class="header">
+			
+			<!-- <div class="topnav" id="myTopnav"> -->
+			
+				<img src="images/90391859-ca88-4574-926d-dd94cfdbad61.jpg" height="229px" width="229px" style="position: absolute; top: 0;">
+				<!-- <a href="#home">&nbsp;</a> -->
+			<section style="display: content;">
+				<div style="display: flex; width:100%; padding-top: 23px;	justify-content: flex-end; ">
+				<ul class="setting" >
+					<a href="#vid">Descubrir</a>
+				<a href="#services">Negocio</a>
+				<a href="#compare">Tasas</a>
+				<a href="#FAQs">Alerts</a>
+				</ul>
+			<!-- </div>
+				<div style="display: flex; width:100%; padding-top: 23px;	justify-content: flex-end;"> -->
+					<ul class="setting1">
+						<li class="setting-li" id="li"><a href="#news">Regístrame</a></li>
+						<li class="setting-li" id="li"><a href="#contact">Iniciar sesión </a></li>
+						<li class="setting-li" ><a href="#about">Ayuda </a></li>
+					</ul>
+				</div>
+			</section>
+
+				<style>
+				
+		.setting1 {
+		font-size: 17px;
+		align-items: center;
+    justify-content: space-around;
+		width: 30%;
+		display: inline-flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+		background-color: #f3f3f3;	
+		font-family: 'Roboto', sans-serif;
+		}
+		.setting1 li:hover{
+		align-items: center;
+		color: white !important;
+		font-weight: bold;
+		font-family: 'Roboto', sans-serif;
+		/* background-color: #663881;; */
+		text-decoration: none;
+		}
+
+		#li{
+		border: black;
+		border-width: 1px;
+		border-right-style: outset;
+		}
+	.setting-li {
+		font-family: 'Roboto', sans-serif;
+  	float: left;
+		}
+
+.setting-li a {
+    display: block;
+    color: black;
+    text-align: center;
+    /* padding: 14px 16px; */
+		text-decoration: none;
+		font-family: 'Roboto', sans-serif;
+}
+</style>
+				
+				<!-- <nav style="background-color: white; color: black;">
+				<a href="#exchhange">Rates</a>
+				<a href="#testemonials">Reviews</a>
+				<a href="#logos">Partners</a>
+				<a href="#guides">Guide Us!</a>
+			</nav>
+			  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			    <i class="fa fa-bars"></i>
+			  </a> -->
+			</div>
+			<!-- <script>
+			function myFunction() {
+				var x = document.getElementById("myTopnav");
+				if (x.className === "topnav") {x.className += " responsive";}
+				else {x.className = "topnav";}
+			}
+			</script> -->
+
+			<div class="head_content row">
+				<div class="col-md-6 col-xs-12 head_heading">
+					<div class="head-button-seting">
+					<h2>Encuentra la forma <br> más económica de enviar dinero al <br> exterior</h2>
+					<button class="btn exchange_btn">Únete Ahora</button>
+					</div>	
+				</div>
+				<div class="col-md-6 col-xs-12 head_heading" style="float: right;">
+					<div class="head_form">
+						<form action="#" method="" role="form">
+
+  							<label for="usr">Enviar Dinero Desde</label>
+						  <div class="input-group">
+						    <span class="input-group-addon"><img src="data:image/png;base64,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" height="20px"></span>
+						    <input id="email" type="text" class="form-control" name="email" placeholder="Ciudad">
+						  </div>
+  							<label for="usr">Enviar Dinero A</label>
+						  <div class="input-group">
+						    <span class="input-group-addon"><img src="https://png.icons8.com/color/100/000000/usa.png" height="20px"></span>
+						    <input id="email" type="text" class="form-control" name="email" placeholder="Ciudad">
+						  </div>
+
+						  <div class="col-md-6 col-xs-6 no_padding_left">
+  							  <label for="usr">Cuánto Cuest</label>
+							  <div class="input-group">
+							    <span class="input-group-addon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATsSURBVGhD7Zr7T1tlGMf52bvx9g+5hNjCaVk7GCPGZDE6h5uyi2xsM4ugxniJMcucxsx0nY4qbbl4wTi5FKQb6NaxERan/iBSAi4rQ5BR2tfnOeepTdvnvOfSA+6HfpNP0vQ87/N+n3P63g5UVVRRRZsnb5f3cVfY63eHPR3AF8CQO+KZQFwRZZC+63BFa33Vnb7HqNndISWiPOQKe5rB4DiQBdPCFBgb9sSxLeagdJsv7ByMvAlGbrNGrRD2LAIdm14Q/DSedkeUedZUWShJoJG62Tj5Q/77oKMgb8JJlCD2Rd06q5rumidgwP7Ed7wBwJhzfELAhHCXrrMdSqjr2Sa++b1fBT9zMTJg/E07VkxttPZ+u0+ivq9R5ISfuRhDYGZz97jvITv2BXflLNuBCRwpBAAPAbJjT0+FPU1cYjPs7H9OfHDpBJUhxCeTp8XhkaPC0+1j442xOZu5+lwPQ2PLU2x93w4x8ueoyGazVEKhFu8sihOXT4qaiJdtr4+StLXO4GLHJ9Snrscvfk39Rpbl6r7Ry+aQo7xO9syJth2WV+zAtSDZNKfWWBubRx8lZempQBHNfCI5CysLZFHTcnpZnEp8LNpGjonPpztFOrNOVzSNzcbZPHKUF8imsSD4Ap9EHxzcxWqPv1EQ82HiI7qiaXV9FQb/1oIYI2ApGCObcuFWHMaH+V0ssX/oFbKnCe++Ei006etpoKt57T6/pyDGCCgkA+vKo2RXX+p5gklgxN6BFrKmiSsEuTyfEL/cuvEfLw/sL4kxRtlKdvWFMwPfWM623saSMfDW+NtsbLnAU2knu/qCQkJcYzNcTI5TCZrWMmvi06sB9SfFxdsFJqNzZFdfMD6GucZmaD6/Vx3AxcJF8MzUWdHQ18S2swo8kUGyqy8o5BLX2CyHY0fFzX9uUgmFwuk4dP1L4est7wnBE/mZ7OoLg7jGVtj+VZOIzYyS/VIl/54Tu75/kW1rBlOFlPPTKubg8CFxZWGS7BcqtZoSz3y7k21nhLmfVhmDXQ/cilz7a4pKyGvojxgbb4TZwd7BNS6X2mgdGB+mEjThdO3v3c7Gy4An8hrZ1ZedBbFl8EDBIpeYv8LGPfvd81RCXvuGDrKxMuCcVEd29YXLv9UtyksD+8hWXtzagYeqYh0bPV4SJwO3KJ6w5xGyKxcUEueS6IHnkHQmTdY0vTvxfkncgaFWuprXnh9aSuJkQCE/kk1jubu8u7kkMuKzF8iappX0inhn4j11zfB2+8WR0VfFzNIMXdW0tLbE7sdkwEDfRTaNpb4OhUMMl0gP3PytZwv3Wig88uode89Nh9hcekARtywfd+1sHk8mTgmwTTblmly4avlFhKnZqlh03J3jEso4PtYu5pbnyG6pbt9ZUvddVg9UcGNnq7+ufoDsWZOry7uDTyqnJuoVrcNtIjj1GdkXIjAVFIdiR2wUkEOpJ1v2BAnO8ImNcfAF3WmyY19b+rfca3U6zuFIIU69MkXhi2S4K9NsRxLuqpfYOanFRJSLXIcbAfbleBE54R9f4C4FuI6dBMeEYz8nmWACaASSnInyUGZhpmygbjZH6uqv/Rl6kTdlBSWFi92TIf+DlH7zpRYEezPczAEZ3mgpGKu2gb3T/1oAJzwC4FkB7y7QCU9rAEyr/zCAn/E7vIYxprfiFVVUkQOqqvoX/oDgJ36x8+QAAAAASUVORK5CYII=" height="20px"></span>
+							    <input id="email" type="number" class="form-control" name="email" placeholder="Precio">
+							  </div>
+						  </div>
+						  <div class="col-md-6 col-xs-6 no_padding">
+  							  <label for="usr">TO</label>
+							  <div class="input-group">
+							    <span class="input-group-addon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATsSURBVGhD7Zr7T1tlGMf52bvx9g+5hNjCaVk7GCPGZDE6h5uyi2xsM4ugxniJMcucxsx0nY4qbbl4wTi5FKQb6NaxERan/iBSAi4rQ5BR2tfnOeepTdvnvOfSA+6HfpNP0vQ87/N+n3P63g5UVVRRRZsnb5f3cVfY63eHPR3AF8CQO+KZQFwRZZC+63BFa33Vnb7HqNndISWiPOQKe5rB4DiQBdPCFBgb9sSxLeagdJsv7ByMvAlGbrNGrRD2LAIdm14Q/DSedkeUedZUWShJoJG62Tj5Q/77oKMgb8JJlCD2Rd06q5rumidgwP7Ed7wBwJhzfELAhHCXrrMdSqjr2Sa++b1fBT9zMTJg/E07VkxttPZ+u0+ivq9R5ISfuRhDYGZz97jvITv2BXflLNuBCRwpBAAPAbJjT0+FPU1cYjPs7H9OfHDpBJUhxCeTp8XhkaPC0+1j442xOZu5+lwPQ2PLU2x93w4x8ueoyGazVEKhFu8sihOXT4qaiJdtr4+StLXO4GLHJ9Snrscvfk39Rpbl6r7Ry+aQo7xO9syJth2WV+zAtSDZNKfWWBubRx8lZempQBHNfCI5CysLZFHTcnpZnEp8LNpGjonPpztFOrNOVzSNzcbZPHKUF8imsSD4Ap9EHxzcxWqPv1EQ82HiI7qiaXV9FQb/1oIYI2ApGCObcuFWHMaH+V0ssX/oFbKnCe++Ei006etpoKt57T6/pyDGCCgkA+vKo2RXX+p5gklgxN6BFrKmiSsEuTyfEL/cuvEfLw/sL4kxRtlKdvWFMwPfWM623saSMfDW+NtsbLnAU2knu/qCQkJcYzNcTI5TCZrWMmvi06sB9SfFxdsFJqNzZFdfMD6GucZmaD6/Vx3AxcJF8MzUWdHQ18S2swo8kUGyqy8o5BLX2CyHY0fFzX9uUgmFwuk4dP1L4est7wnBE/mZ7OoLg7jGVtj+VZOIzYyS/VIl/54Tu75/kW1rBlOFlPPTKubg8CFxZWGS7BcqtZoSz3y7k21nhLmfVhmDXQ/cilz7a4pKyGvojxgbb4TZwd7BNS6X2mgdGB+mEjThdO3v3c7Gy4An8hrZ1ZedBbFl8EDBIpeYv8LGPfvd81RCXvuGDrKxMuCcVEd29YXLv9UtyksD+8hWXtzagYeqYh0bPV4SJwO3KJ6w5xGyKxcUEueS6IHnkHQmTdY0vTvxfkncgaFWuprXnh9aSuJkQCE/kk1jubu8u7kkMuKzF8iappX0inhn4j11zfB2+8WR0VfFzNIMXdW0tLbE7sdkwEDfRTaNpb4OhUMMl0gP3PytZwv3Wig88uode89Nh9hcekARtywfd+1sHk8mTgmwTTblmly4avlFhKnZqlh03J3jEso4PtYu5pbnyG6pbt9ZUvddVg9UcGNnq7+ufoDsWZOry7uDTyqnJuoVrcNtIjj1GdkXIjAVFIdiR2wUkEOpJ1v2BAnO8ImNcfAF3WmyY19b+rfca3U6zuFIIU69MkXhi2S4K9NsRxLuqpfYOanFRJSLXIcbAfbleBE54R9f4C4FuI6dBMeEYz8nmWACaASSnInyUGZhpmygbjZH6uqv/Rl6kTdlBSWFi92TIf+DlH7zpRYEezPczAEZ3mgpGKu2gb3T/1oAJzwC4FkB7y7QCU9rAEyr/zCAn/E7vIYxprfiFVVUkQOqqvoX/oDgJ36x8+QAAAAASUVORK5CYII=" height="20px"></span>
+							    <input id="email" type="number" class="form-control" name="email" placeholder="Precio">
+							  </div>
+						  </div>
+  							<label for="usr">Compara</label>
+						  <div class="input-group">
+								<!-- <span class="input-group-addon">/</span> -->
+								<span class="input-group-addon"><i class="fas fa-at"></i></span>
+						    <input id="email" type="text" class="form-control" name="email" placeholder="correo electrónico">
+						  </div>
+
+						</form>
+					</div>
+
+				</div>
+
+			</div>
+		</header>
+		
+		<img src="images/flags/web design01 v1 (1).jpg" style="background-position: center; background-size: cover; background-repeat: no-repeat;" width="100%">
+
+    <!-- background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; -->
+		<!-- <section class="section vid" id="vid">
+			  <div id="video" style="background-color: rgb(245,245,245);">
+			          <div class="" style="z-index:-1;">
+			             <h1>About</h1> 
+			            <div class="span3"></div>
+			            <div class="wrapper_vid">
+			                <video width="100%" poster="images/vid.png" controls class="video">
+			                    <source src="images/video.mp4" type="video/mp4"/>
+			                </video>
+			                <div class="playpause"></div>
+			            </div>
+			            <div class="span3"></div>
+			</div>
+		</section> -->
+
+		
+
+		<section class="section services" id="services">
+				<h2 class="center-heading"><u>Envía dinero con los mejores proveedores en 3 sencillos pasos</u></h2>
+			<div class="row" style="width: 80%; margin: 50px auto;display: contents;">
+				<div class="col-md-4 services_box">
+					<div class="services_content">
+						<center>
+							<h3>1</h3>
+							<p>Complete el formulario y haga clic en comparar.</p>
+						</center>
+					</div>
+					<img src="images/services.png">
+				</div>
+				<div class="col-md-4 services_box">
+					<div class="services_content">
+						<center>
+							<h3>2</h3>
+							<p>Elige la mejor empresa en la lista.</p>
+						</center>
+					</div>
+					<img src="images/services.png">
+				</div>
+				<div class="col-md-4 services_box">
+					<div class="services_content">
+						<center>
+							<h3>3</h3>
+							<p>haga su transferencia con el operador que ha elegido.</p>
+						</center>
+					</div>
+					<img src="images/services.png">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<img src="images/services_map.png" width="100%" style="margin-top: 20px;">
+				</div>
+				<div class="col-md-6 services_bullets">
+					<ul>
+						<li>250 millones de migrantes</li>
+						<li>Envían dinero a casas</li>
+						<li>Ayudando a más de 700 millones de familias</li>
+						<li>A llegar a fin de mes</li>
+						<li>En 2017 las remesas internacionales ascienden a 466 mil millones</li>
+						<li>El costo de envío de remesas cayó a 7.68%</li>
+						<li>Ahorrando más de 60 mil millones alos bolsillos de migrantes</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="compare" id="compare">
+			<div class="compare_heading bg_purple_grad">
+				<h2>We Compare and review 384 money transfer companies</h2>
+			</div>			
+		</section>
+<!-- 
+			<div class="row bg_purple_grad">
+				<div class="col-md-8">
+					<h2><b>Transfer a Large Amount Abroad?</b><br>Make the most of ypur currency exchange</h2>
+				</div>
+				<div class="col-md-4">
+					<button class="btn get_advice">Get free personalized advice</button>
+				</div>
+			</div>		 -->
+<!-- 
+		<section class="FAQs"  id="FAQs">
+			<h2><b>Questions</b> you may have</h2>
+
+			<div class="row">
+				<div class="col-md-4 FAQS_box">
+					<div>
+						<p>Is it possible to send money with remeus, or are you just a servies to compare money transfer servies?</p>
+						<img src="images/faq.png">
+					</div>
+						<div class="faqs_ans">
+							<p>Is it possible to send money with remeus, or are you just a servies to compare money transfer servies?</p>
+						</div>
+				</div>
+
+				<div class="col-md-4 FAQS_box">
+					<div><p>How can i use remeus to find the best ways to send money home?</p>
+					<img src="images/faq.png">
+					</div>
+						<div class="faqs_ans">
+							<p>Is it possible to send money with remeus, or are you just a servies to compare money transfer servies?</p>
+						</div>
+				</div>
+
+				<div class="col-md-4 FAQS_box">
+					<div><p>Can i trust a company i found on remeus but never heard about before?</p>
+					<img src="images/faq.png">
+					</div>
+						<div class="faqs_ans">
+							<p>Is it possible to send money with remeus, or are you just a servies to compare money transfer servies?</p>
+						</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="exchhange" id="exchhange">
+			<h2>Find the best <b>currency exchange rates</b></h2>
+			<div class="row exchange_inputs">
+			  <div class="col-md-5 col-xs-5">
+			    <div class="input-group">
+			      <input type="text" class="form-control" aria-label="...">
+			      <div class="input-group-btn">
+			        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">currency<span class="caret"></span></button>
+			        <ul class="dropdown-menu dropdown-menu-right">
+			          <li><a href="#">PKR</a></li>
+			          <li><a href="#">USD</a></li>
+			          <li><a href="#">Euro</a></li>
+			        </ul>
+			      </div><!-- /btn-group -->
+			    <!-- </div><!-- /input-group -->
+			  <!-- </div>/.col-lg-6
+
+			  <div class="col-md-1 col-xs-1">
+			  	<center><font size="5px"><i class="glyphicon glyphicon-resize-small"></i></font></center>
+			  </div>
+			  <div class="col-md-5 col-xs-5">
+			    <div class="input-group">
+			      <input type="text" class="form-control" aria-label="...">
+			      <div class="input-group-btn">
+			        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">currency<span class="caret"></span></button>
+			        <ul class="dropdown-menu dropdown-menu-right">
+			          <li><a href="#">PKR</a></li>
+			          <li><a href="#">USD</a></li>
+			          <li><a href="#">Euro</a></li>
+			        </ul>
+			      </div><!-- /btn-group -->
+			    <!-- </div><!-- /input-group -->
+			  <!-- </div> /.col-lg-6
+			</div>/.row -->
+			
+			<!-- <center>
+				<button class="btn btn-flat exchange_btn">Find the best exchange retes</button>
+			</center>
+			<h3>Live exchange rates for selected currencies</h3>
+
+			<table class="myTable">
+				<tr> -->
+					<!-- <td class="b no_border"></td>
+					<td class="b">INR</td>
+					<td class="b">CNY</td>
+					<td class="b">PLN</td> -->
+					<!-- <td class="b">MAD</td>
+					<td class="b">CHF</td>
+					<td class="b">NGN</td>
+					<td class="b">GBP</td>
+					<td class="b">RON</td>
+					<td class="b">USD</td>
+				</tr>
+				<tr> --> 
+					<!-- <td class="b">EUR</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+				</tr> -->
+				<!-- <tr>
+					<td style="border: none" colspan="10">&nbsp;</td>
+
+				</tr>
+				<tr>
+					<td class="b no_border"></td>
+					<td class="b">INR</td>
+					<td class="b">CNY</td>
+					<td class="b">PLN</td>
+					<td class="b">MAD</td>
+					<td class="b">CHF</td>
+					<td class="b">NGN</td>
+					<td class="b">GBP</td>
+					<td class="b">RON</td>
+					<td class="b">USD</td>
+				</tr> -->
+				<!-- <tr>
+					<td class="b">EUR</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+					<td>78.5</td>
+				</tr> -->
+				
+			<!-- </table>
+			<p align="center"><font size="1px">All exchange rates are powered by <a href="#">XE.com</a><br><br></font></p>
+		</section> --> 
+<!-- 
+		<section class="testemonials" id="testemonials">
+			<h2>What our <b>users</b> say</h2>
+
+					<div class="slideshow-container">
+
+					<div class="mySlides">
+						<div class="media">
+						  <div class="media-left">
+						    <img src="images/testinomials/1.png" class="media-object" style="width:120px">
+						  </div>
+						  <div class="media-body">
+						    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						    <h4 class="media-heading">- John Doe1</h4>
+						  </div>
+						</div>
+					</div>
+
+					<div class="mySlides">
+						<div class="media">
+						  <div class="media-left">
+						    <img src="images/testinomials/2.png" class="media-object" style="width:120px">
+						  </div>
+						  <div class="media-body">
+						    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						    <h4 class="media-heading">- John Doe2</h4>
+						  </div>
+						</div>
+					</div>
+
+					<div class="mySlides">
+						<div class="media">
+						  <div class="media-left">
+						    <img src="images/testinomials/3.png" class="media-object" style="width:120px">
+						  </div>
+						  <div class="media-body">
+						    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						    <h4 class="media-heading">- John Doe3</h4>
+						  </div>
+						</div>
+					</div>
+
+					<a class="prev" onclick="plusSlides(-1)">❮</a>
+					<a class="next" onclick="plusSlides(1)">❯</a>
+
+					</div>
+
+					<div class="dot-container">
+					  <span class="dot" onclick="currentSlide(1)"></span> 
+					  <span class="dot" onclick="currentSlide(2)"></span> 
+					  <span class="dot" onclick="currentSlide(3)"></span> 
+					</div> -->
+
+					<!-- <script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+
+					function plusSlides(n) {
+					  showSlides(slideIndex += n);
+					}
+
+					function currentSlide(n) {
+					  showSlides(slideIndex = n);
+					}
+
+					function showSlides(n) {
+					  var i;
+					  var slides = document.getElementsByClassName("mySlides");
+					  var dots = document.getElementsByClassName("dot");
+					  if (n > slides.length) {slideIndex = 1}    
+					  if (n < 1) {slideIndex = slides.length}
+					  for (i = 0; i < slides.length; i++) {
+					      slides[i].style.display = "none";  
+					  }
+					  for (i = 0; i < dots.length; i++) {
+					      dots[i].className = dots[i].className.replace(" active", "");
+					  }
+					  slides[slideIndex-1].style.display = "block";  
+					  dots[slideIndex-1].className += " active";
+					}
+					</script>
+
+		</section> -->
+<!--  
+		<section class="logos"  id="logos">
+			<div class="row">
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/1.png" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/2.png" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/3.png" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/4.png" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/5.png" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/6.png" width="100%">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/7.jpg" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/8.png" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/9.png" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/10.png" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/11.png" width="100%">
+				</div>
+				<div class="col-md-2 col-xs-4 logo_here">
+					<img src="images/partners/12.png" width="100%">
+				</div>
+			</div>
+		</section> -->
+
+		<!-- <section class="guides" id="guides">
+			<h2>Our guides to save on money transfer</h2>
+			<div class="row">
+				<div class="col-md-3 col-xs-6 guides_box">
+					<div>
+					<img src="images/10.png" width="100%">
+					<p>Guide for sending large amount of money abroad<br><br></p>
+					</div>
+				</div>
+
+				<div class=" col-md-3 col-xs-6 guides_box">
+					<div>
+					<img src="images/09.png" width="100%">
+					<p>Currency exchange fee: what is it and how to minimize it ?<br><br></p>
+					</div>
+				</div>
+
+				<div class=" col-md-3 col-xs-6 guides_box">
+					<div>
+					<img src="images/08.png" width="100%">
+					<p>5 signs you’re wasting money on transfer fees<br><br></p>
+					</div>
+				</div>
+
+				<div class=" col-md-3 col-xs-6 guides_box">
+					<div>
+					<img src="images/07.jpg" width="100%">
+					<p>6 reasons to compare money transfer servies<br><br></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="flags"  id="flags">
+			<h2>Where are you sending the money</h2>
+			<img src="images/flags.png" width="100%;">
+		</section> -->
+		<div class="all-box" style="background-color: #f5f1ee;">
+		<section style="width: 100%;">
+		<div class="books" style="    margin: -25px;		display: flex !important; justify-content:flex-end; background-color: #f5f1ee; padding-right: 6%; padding-left: 6%;" >
+		<img src="if_arrow-left-01_186410.png" style="height: 50px;width: 50px;align-self: center;background-color: #dac3de;border-radius: 24px;">	
+
+		<section class="first">
+			
+			<div class="card" style="background-color: #ffffff;" >
+					<img class="card-img-top" src="images/flags/paypal.jpg" alt="" height="156px">
+					<div class="card-body">
+						<h3 class="card-title" style="margin-top: -20px; margin-bottom: 10px;"> GLOBAL SCORE </h3>
+						<p class="card-text" >5.90</p>
+
+						<div>
+						<div style="display: flex;justify-content: space-evenly;width: 93%;">
+								<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;">	Pricing </p>
+								<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+									<div class="w3-border" style="height:24px; width:30%; background-color: #6b2d77; color: white;border-radius: 5px;">3/10</div>
+								</div>
+							</div>
+
+							<div style="display: flex;justify-content: space-evenly;width: 93%;">
+									<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;">	Speed</p>
+									<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+										<div class="w3-border" style="height:24px; width:60%; background-color: #6b2d77; color: white;border-radius: 5px;">6/10</div>
+									</div>
+								</div>
+
+								<div style="display: flex;justify-content: space-evenly;width: 93%;">
+										<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;padding-right: 7px;">	Transparency </p>
+										<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+											<div class="w3-border" style="height:24px; width:60%; background-color: #6b2d77; color: white;border-radius: 5px;">6/10</div>
+										</div>
+									</div>
+
+									<div style="display: flex;justify-content: space-evenly;width: 93%;">
+											<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;">	Coverage </p>
+											<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+												<div class="w3-border" style="height:24px; width:50%; background-color: #6b2d77; color: white;border-radius: 5px;">3/10</div>
+											</div>
+										</div>
+						</div>
+						<p style="display: flex; justify-content: center;	font-size: 25px;font-weight:bold; padding-top: 6px;color: #702a7b;">Read detail review</p>
+					</div>
+				</div>
+				</section>
+
+				<section class="first">
+					<div class="card"  style="background-color: #ffffff;" >
+							<img class="card-img-top" src="images/flags/Kabayan-remit.png" alt="" width="250px" height="158px;">
+							<div class="card-body" >
+								<h3 class="card-title" style="color:#939393; margin-top: -20px; margin-bottom: 10px;"> GLOBAL SCORE </h3>
+								<p class="card-text" >6.30</p>
+								
+								<div style="display: flex;justify-content: space-evenly;">
+								<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;">	Pricing </p>
+								<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+									<div class="w3-border" style="height:24px; width:50%; background-color: #6b2d77; color: white;border-radius: 5px;">5/10</div>
+								</div>
+							</div>
+
+							<div style="display: flex;justify-content: space-evenly;">
+									<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;">	Speed </p>
+									<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+										<div class="w3-border" style="height:24px; width:70%; background-color: #6b2d77; color: white;border-radius: 5px;">7/10</div>
+									</div>
+								</div>
+
+								<div style="display: flex;justify-content: space-evenly;">
+										<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;padding-right: 7px;">	Transparency </p>
+										<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+											<div class="w3-border" style="height:24px; width:70%; background-color: #6b2d77; color: white;border-radius: 5px;">7/10</div>
+										</div>
+									</div>
+
+									<div style="display: flex;justify-content: space-evenly;">
+											<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;">	Coverage </p>
+											<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+												<div class="w3-border" style="height:24px; width:60%; background-color: #6b2d77; color: white;border-radius: 5px;">6/10</div>
+											</div>
+										</div>
+										<p style="display: flex; justify-content: center;	font-size: 25px;font-weight:bold; padding-top: 6px;color: #702a7b;">Read detail review</p>
+							</div>
+					</div>
+				</section>			
+
+						<section class="first">
+							<div class="card" style="background-color: #ffffff;" >
+									<img class="card-img-top" src="images/flags/paypal.jpg" alt="" height="156px">
+									<div class="card-body">
+										<h3 class="card-title" style="margin-top: 0px; margin-bottom: 10px;"  style="color:#939393;"> GLOBAL SCORE </h3>
+										<p class="card-text">8.00</p>
+														
+										<div style="display: flex;justify-content: space-evenly;">
+												<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;">	Pricing </p>
+												<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+													<div class="w3-border" style="height:24px; width:90%; background-color: #6b2d77; color: white;border-radius: 5px;">9/10</div>
+												</div>
+											</div>
+
+											<div style="display: flex;justify-content: space-evenly;">
+													<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;">	Speed </p>
+													<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+														<div class="w3-border" style="height:24px; width:80%; background-color: #6b2d77; color: white;border-radius: 5px;">8/10</div>
+													</div>
+												</div>
+
+												<div style="display: flex;justify-content: space-evenly;">
+														<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important; padding-right: 7px;">	Transparency </p>
+														<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+															<div class="w3-border" style="height:24px; width:80%; background-color: #6b2d77; color: white;border-radius: 5px;">8/10</div>
+														</div>
+													</div>
+
+													<div style="display: flex;justify-content: space-evenly;">
+															<p style="font-size: 20px;font-weight: bold;font-family: 'Roboto', sans-serif !important;">	Coverage </p>
+															<div style=" border-radius: 5px;background: #d6cfc7;width: 63%;	height: 24px;">
+																<div class="w3-border" style="height:24px; width:80%; background-color: #6b2d77; color: white;border-radius: 5px;">8/10</div>
+															</div>
+														</div>
+														<p style="display: flex; justify-content: center;	font-size: 25px;font-weight:bold; padding-top: 6px;color: #702a7b;">Read detail review</p>
+									</div>
+								</div>
+							</section>
+							<img src="if_arrow-right-01_186409.png" style="height: 50px;width: 50px;align-self: center;background-color: #dac3de;border-radius: 24px;">
+					</section>
+				</div>
+<style>
+.skill{
+	display: flex;
+  width:200px;
+  margin:0 auto;
+}
+.rating-bar{
+	margin-top: 12px;
+	padding-left: 10px;
+  /* background:black; */
+	padding:0px;
+	width: 100%;
+}
+.rating-bar span{
+  display:block;
+  height:15px;
+}
+.rating-bar{
+	padding-left: 10px;
+}
+.rating-bar, .rating-bar span {
+  border-radius:4px; 
+}
+
+/* Used to color the bars */
+.blue{ background:#512b78; width: 20%; }
+.red{ background:#512b78; }
+
+
+	.card-text{
+		font-size: 2em;
+  	text-align: center;
+  	font-weight: bolder;
+	}
+	.first{
+    justify-content: space-around;
+    display:flex !important;
+    background-color: #f5f1ed;
+		border: 1px solid #f5f1ed;
+		margin: 15px;
+		height: 470px;
+   }
+	 
+	 .one{
+    color: black;
+		background-color: #ffffff;
+		border: 1px solid grey;
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+		display: flex;
+		font-family:"Roboto",Helvetica,Arial,sans-serif; 
+    /* font-family: 'Boogaloo', cursive; */
+    font-size: 3em;
+    /* text-decoration:#c09b30 underline; */
+}
+</style>
+
+<br>
+
+		<div class="row footers">
+				<div class="col-md-12" style="padding-right: 0px;">
+					<div class="row">
+						  <div class="col-md-2">
+						    <img src="images/logo1.png"   style="margin-left: 15px;">
+						  </div>
+						  <div class="col-md-10">
+						    <p class="last-para">MONY El super buscador para servicios internacionales de transferencia de dinero y cambio de divisas. Comparamos y revisamos más de 50 operadores de transferencia de dinero y cambio de divisas para ayudarlo a encontrar la mejor opción para cada una de sus transacciones internacionales.<br><br>Las tarifas y otros datos se proporcionan "tal cual" y únicamente con fines informativos. Los tipos de cambio y cambio cambian con frecuencia durante el día y la información provista en este sitio puede retrasarse. Los servicios de MONY brindan contenido e información para ayudarlo a buscar y controlar las tasas de cambio de remesas. Sin embargo, MONY no brinda ningún consejo sobre cómo enviar dinero de un país a otro. Debe tener precaución y usar su criterio, y debe verificar los últimos datos e información sobre las remesas para tomar su (s) decisión (es) de remisión. MONY no se hace responsable de ninguna pérdida en la que pueda incurrir como parte de sus transacciones de envío. Por favor, consulte nuestros Términos de uso para obtener más información.</p>
+						  </div>
+					</div>
+				</div>
+				<div class="col-md-12 last_footer">
+					<div class="col-md-6 col-xs-6" style="float: right;">
+						  <div class="col-md-5 col-xs-5" style="padding: 0px 0px;">
+						    <div class="input-group" style="width: 100%; padding-top: 5px; padding-right: 5px;">
+						      <input type="text" class="form-control" aria-label="...">
+						    </div><!-- /input-group -->
+						  </div><!-- /.col-lg-6 -->
+
+
+						  <div class="col-md-2 col-xs-2" style="padding: 0px 0px;">
+						  	<button class="btn foot_button">SUBSCRIBE</button>
+						  </div><!-- /.col-lg-6 -->
+						 
+					</div>
+					<ul>
+						<li><img src="images/1.png"></li>
+						<li><img src="images/2.png"></li>
+						<li><img src="images/3.png"></li>
+						<li><img src="images/4.png"></li>
+						<div class="col-md-3 col-xs-3 foot_link" style="display: contents;">
+								<a href="https://www.remeus.com" target="_blank" style="margin-left: 100%; font-size: 19px; font-weight: bold">
+								  www.remeus.com
+								</a>
+						  </div>
+					</ul>
+					 
+				</div>
+		</div>
+   <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+<script>
+
+
+  var turn=1;var interval;var timer;
+
+
+$(document).scroll(function() {
+  var y = $(this).scrollTop();
+  if (y > 200) {
+    $('.down_arrow').fadeOut();
+  } else {
+    $('.down_arrow').fadeIn();
+  }
+});
+
+
+  $(document).ready(function(){
+
+//video button
+$('.video').parent().click(function () {
+    if($(this).children(".video").get(0).paused){
+        $(this).children(".video").get(0).play();
+        $(this).children(".playpause").fadeOut();
+        //$(".video").css("margin","0px 0px","with","50%");
+        $(".wrapper_vid").css("border","0px solid red");
+    }else{
+       $(this).children(".video").get(0).pause();
+        $(this).children(".playpause").fadeIn();
+    }
+});
+
+    //loader
+window.onload = function () { 
+    $("#loading").fadeOut(1000);
+ }
+
+//for scrolling
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+});
+</script>
+  </body>
+</html>
